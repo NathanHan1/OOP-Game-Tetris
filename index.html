@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>俄罗斯方块</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            background: url(./img/timg1.jpg);
+            background-size: cover;
+        }
+
+        table {
+            margin: 10px auto;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid rgb(117, 117, 117);
+            border-collapse: collapse
+        }
+
+        td {
+            width: 27px;
+            height: 27px;
+        }
+
+        .I {
+            background: rgb(138, 212, 241);
+        }
+
+        .L {
+            background: rgb(241, 80, 107);
+        }
+
+        .T {
+            background: rgb(225, 253, 64);
+        }
+
+        .J {
+            background: rgb(246, 10, 175);
+        }
+
+        .Z {
+            background: rgb(129, 57, 245);
+        }
+
+        .S {
+            background: rgb(2, 128, 247);
+        }
+
+        .O {
+            background: rgb(8, 184, 96);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <audio id="audio" src="./img/StudioEIM - 魔法密林.mp3" ></audio>
+    </div>
+
+</body>
+<script src="./js/Game.js"></script>
+<script src="./js/Block.js"></script>
+<script src="./js/Map.js"></script>
+<script src="./js/Block_json.js"></script>
+<script>
+    const game = new Game()
+    let flag = 0
+    document.addEventListener('visibilitychange', function() {
+        flag % 2 === 0 ? document.getElementsByTagName('title')[0].innerText = "快回来！" : document.getElementsByTagName('title')[0].innerText = "俄罗斯方块"
+        flag++
+    })
+</script>
+
+
+</html>
